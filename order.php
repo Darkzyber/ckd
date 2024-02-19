@@ -62,21 +62,21 @@
                 </div>
             </div>
             <div class="progress-group">
-                <span class="float-right">โซเดียมต่อวัน<b> <?php echo $_SESSION['sodium'] ?> / 2,000 มิลลิกรัม</b></span>
+                <span class="float-right">โซเดียมต่อวัน<b> <?php echo $_SESSION['sodium'] ?> / <?php echo number_format($_SESSION['limit_sodium'],0)?> มิลลิกรัม</b></span>
                 <div class="progress progress-sm">
-                    <div class="progress-bar bg-danger" style="width:<?php echo $_SESSION['sodium'] / 2000 * 100 ?>%"></div>
+                    <div class="progress-bar bg-danger" style="width:<?php echo $_SESSION['sodium'] / $_SESSION['limit_sodium'] * 100 ?>%"></div>
                 </div>
             </div>
             <div class="progress-group">
-                <span class="float-right">ฟอสฟอรัส<b> <?php echo $_SESSION['phosphorus'] ?> / 1,000 มิลลิกรัม</b></span>
+                <span class="float-right">ฟอสฟอรัส<b> <?php echo $_SESSION['phosphorus'] ?> / <?php echo number_format($_SESSION['limit_phosphorus'],0)?> มิลลิกรัม</b></span>
                 <div class="progress progress-sm">
-                    <div class="progress-bar bg-success" style="width:<?php echo $_SESSION['phosphorus'] / 1000 * 100 ?>%"></div>
+                    <div class="progress-bar bg-success" style="width:<?php echo $_SESSION['phosphorus'] / $_SESSION['limit_phosphorus'] * 100 ?>%"></div>
                 </div>
             </div>
             <div class="progress-group">
-                <span class="float-right">โพแทสเซียม<b> <?php echo $_SESSION['potassium'] ?> / 3,000 มิลลิกรัม</b></span>
+                <span class="float-right">โพแทสเซียม<b> <?php echo $_SESSION['potassium'] ?> / <?php echo number_format($_SESSION['limit_potassium'],0)?> มิลลิกรัม</b></span>
                 <div class="progress progress-sm">
-                    <div class="progress-bar bg-warning" style="width:<?php echo $_SESSION['potassium'] / 3000 * 100 ?>%"></div>
+                    <div class="progress-bar bg-warning" style="width:<?php echo $_SESSION['potassium'] / $_SESSION['limit_potassium'] * 100 ?>%"></div>
                 </div>
             </div>
           </div>
@@ -122,7 +122,7 @@
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">ไก่ผัดพริกขิง</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row['food_name']?></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -135,15 +135,17 @@
           </tr>
         </thead>
         <tbody>
+
+        
             <?php
 
                 $color1 = ($row['protean'] + $_SESSION['protean'] <= ($_SESSION['weight'] * 0.7)) ? 'warning' : 'danger';
                 
-                $color2 = ($row['sodium'] + $_SESSION['sodium'] <= 2000 ) ? 'warning' : 'danger';
+                $color2 = ($row['sodium'] + $_SESSION['sodium'] <= $_SESSION['limit_sodium'] ) ? 'warning' : 'danger';
                 
-                $color3 = ($row['phosphorus'] + $_SESSION['phosphorus'] <= 1000 ) ? 'warning' : 'danger';
+                $color3 = ($row['phosphorus'] + $_SESSION['phosphorus'] <= $_SESSION['limit_phosphorus'] ) ? 'warning' : 'danger';
                 
-                $color4 = ($row['potassium'] + $_SESSION['potassium'] <= 3000 ) ? 'warning' : 'danger';
+                $color4 = ($row['potassium'] + $_SESSION['potassium'] <= $_SESSION['limit_potassium'] ) ? 'warning' : 'danger';
                 
                 $close = false;
                 
@@ -202,10 +204,10 @@
             <td>
 
               <div class="progress-stacked">
-                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['sodium'] / 2000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['sodium'] / $_SESSION['limit_sodium'] * 100 ?>%">
                   <div class="progress-bar bg-primary"></div>
                 </div>
-                <div class="progress" role="progressbar" style="width:<?php echo $row['sodium'] / 2000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $row['sodium'] / $_SESSION['limit_sodium'] * 100 ?>%">
                   <div class="progress-bar bg-<?php echo $color2; ?>"></div>
                 </div>
               </div>
@@ -217,10 +219,10 @@
             <td>
 
               <div class="progress-stacked">
-                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['phosphorus'] / 1000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['phosphorus'] / $_SESSION['limit_phosphorus'] * 100 ?>%">
                   <div class="progress-bar bg-primary"></div>
                 </div>
-                <div class="progress" role="progressbar" style="width:<?php echo $row['phosphorus'] / 1000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $row['phosphorus'] / $_SESSION['limit_phosphorus'] * 100 ?>%">
                   <div class="progress-bar bg-<?php echo $color3; ?> text-dark">
                   </div>
                 </div>
@@ -233,10 +235,10 @@
             <td class="m-0">
               
               <div class="progress-stacked">
-                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['potassium'] / 3000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $_SESSION['potassium'] / $_SESSION['limit_potassium'] * 100 ?>%">
                   <div class="progress-bar bg-primary"></div>
                 </div>
-                <div class="progress" role="progressbar" style="width:<?php echo $row['potassium'] / 3000 * 100 ?>%">
+                <div class="progress" role="progressbar" style="width:<?php echo $row['potassium'] / $_SESSION['limit_potassium'] * 100 ?>%">
                   <div class="progress-bar bg-<?php echo $color4; ?> text-light"></div>
                 </div>
               </div>

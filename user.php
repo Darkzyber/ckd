@@ -60,21 +60,21 @@
                     </div>
                 </div>
                 <div class="progress-group">
-                    <span class="float-right">โซเดียมต่อวัน<b> <?php echo $_SESSION['sodium'] ?> / 2,000 มก.</b></span>
+                    <span class="float-right">โซเดียมต่อวัน<b> <?php echo $_SESSION['sodium'] ?> / <?php echo number_format($_SESSION['limit_sodium'],0)?> มก.</b></span>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" style="width:<?php echo $_SESSION['sodium'] / 2000 * 100 ?>%"></div>
+                        <div class="progress-bar bg-danger" style="width:<?php echo $_SESSION['sodium'] / $_SESSION['limit_sodium'] * 100 ?>%"></div>
                     </div>
                 </div>
                 <div class="progress-group">
-                    <span class="float-right">ฟอสฟอรัส<b> <?php echo $_SESSION['phosphorus'] ?> / 1,000 มก.</b></span>
+                    <span class="float-right">ฟอสฟอรัส<b> <?php echo $_SESSION['phosphorus'] ?> / <?php echo number_format($_SESSION['limit_phosphorus'],0)?> มก.</b></span>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" style="width:<?php echo $_SESSION['phosphorus'] / 1000 * 100 ?>%"></div>
+                        <div class="progress-bar bg-success" style="width:<?php echo $_SESSION['phosphorus'] / $_SESSION['limit_phosphorus'] * 100 ?>%"></div>
                     </div>
                 </div>
                 <div class="progress-group">
-                    <span class="float-right">โพแทสเซียม<b> <?php echo $_SESSION['potassium'] ?> / 3,000 มก.</b></span>
+                    <span class="float-right">โพแทสเซียม<b> <?php echo $_SESSION['potassium'] ?> / <?php echo number_format($_SESSION['limit_potassium'],0)?> มก.</b></span>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" style="width:<?php echo $_SESSION['potassium'] / 3000 * 100 ?>%"></div>
+                        <div class="progress-bar bg-warning" style="width:<?php echo $_SESSION['potassium'] / $_SESSION['limit_potassium'] * 100 ?>%"></div>
                     </div>
                 </div>
 

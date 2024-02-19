@@ -39,6 +39,24 @@
     ###
     ##
     #   Function
+    function datamine_ckd(){
+        $ckd = $_SESSION['ckd'];
+        if($ckd == '1'){
+            $_SESSION['limit_sodium'] = 2300;
+            $_SESSION['limit_phosphorus'] = 1000;
+            $_SESSION['limit_potassium'] = 2350;
+        }else if($ckd == '2'){
+            $_SESSION['limit_sodium'] = 1750;
+            $_SESSION['limit_phosphorus'] = 900;
+            $_SESSION['limit_potassium'] = 2000;
+        }else if($ckd == '3'){
+            $_SESSION['limit_sodium'] = 1500;
+            $_SESSION['limit_phosphorus'] = 800;
+            $_SESSION['limit_potassium'] = 1500;
+        }
+    }
+
+
     
 
     # ยังไม่ได้ login
@@ -63,6 +81,7 @@
             $_SESSION['phosphorus'] = $food_row[0]['p2'];
             $_SESSION['potassium'] = $food_row[0]['p3'];
             $_SESSION['sodium'] = $food_row[0]['p4'];
+            datamine_ckd();
         }
     }
 

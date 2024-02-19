@@ -66,7 +66,10 @@
 
     <link rel="stylesheet" href="source/css/index.css">
 </head>
-<body class=""> 
+<body>
+
+  <div class="vh25"></div>
+  
   <div class="container">
     <?php
         if (isset($errorMsg)){
@@ -85,7 +88,7 @@
 
     <?php   }   ?>
 
-    <div class="card vh25 shadow text-center align-items-center col-12 col-lg-8 mx-auto">
+    <div class="card shadow text-center align-items-center col-12 col-lg-8 mx-auto">
       <h4 class="card-header col-12 ">
         โปรแกรมคำนวนโภชนาการ ของผู้ป่วยโรคไต
       </h4>
