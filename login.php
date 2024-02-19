@@ -21,7 +21,19 @@
 </head>
 <body>
 <div class="container">
-    <div class="card vh25 shadow text-center align-items-center col-12 col-lg-8 mx-auto">
+	<div class="vh25"></div>
+    <?php
+		if (isset($_SESSION['error'])){
+    ?>
+    <div class="alert alert-danger mt-5">
+        <strong>ผิดพลาด <?php echo $_SESSION['error']; ?></strong>
+    </div>
+
+    <?php
+			unset( $_SESSION['error']);
+        }
+    ?>
+    <div class="card shadow text-center align-items-center col-12 col-lg-8 mx-auto">
         <div class="card-header col-12 ">
         CKD Project
         </div>

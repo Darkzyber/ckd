@@ -59,7 +59,7 @@
                 </div>
                 <div class="btn-group justify-content-center m-0 p-0" >
                     <button type="button" class="btn btn-outline-primary shadow rounded-top-0" data-bs-toggle="modal" data-bs-target="#modal<?php echo $row['f_id']?>">
-                        แสดงรายระเอียด
+                        แสดงรายละเอียด
                     </button>
                 </div>
             </div>

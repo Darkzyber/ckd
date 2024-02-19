@@ -41,13 +41,14 @@ try{
             header("location: ../user.php");
         }else{
             $_SESSION['error'] = 'รหัสผ่านไม่ถูกต้อง';
-            echo "error";
-            // header("location: ../login.php");
+            // echo "error";
+            header("location: ../login.php");
         }
 
     }else{
-        $_SESSION['warn'] = "ไม่พบ Email นี้ในระบบ";
-        // header("location ../login.php");
+        $_SESSION['error'] = "ไม่พบ Email นี้ในระบบ";
+            // echo "error";
+		header("location: ../login.php");
     }
 }catch(PDOException $e){
     echo "Error " . $e->getMessage();

@@ -52,7 +52,7 @@
               </div>
                 <a href="logout.php">ออกจากระบบ</a>
               <hr class="my-4">
-              <h5 class="card-title">รายระเอียดโภชนาการต่อวัน </h5>
+              <h5 class="card-title">รายละเอียดโภชนาการต่อวัน </h5>
                 <div class="progress-group">
                     <span class="float-right">โปรตีนต่อวัน<b> <?php echo $_SESSION['protean'] ?> / <?php echo $_SESSION['weight'] * 0.7; #g?>ก.</b></span>
                     <div class="progress progress-sm">
