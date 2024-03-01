@@ -37,6 +37,7 @@
     <div class="container">
         <div class="display-3 text-center text-light">ข้อมูลอาหาร</div>
         <a href="add.php" class="btn btn-success my-3">เพิ่มอาหาร</a>
+        <a href="user.php" class="btn btn-info my-3">User</a>
         <table class="table table-dark table-bordered table-hover text-center">
             <thead>
                 <tr>
