@@ -11,7 +11,7 @@
 
 <h3>ลิงค์สำหรับลองใช้!</h3>
 <p>
-  CKD Project: <a href="http://141.11.159.43/" target="_blank"> Click me!</a>
+  CKD Project: <a href="http://49.231.43.198/ckd" target="_blank"> Click me!</a>
 </p>
 <p>**Only Thai language</p>
 <hr />
